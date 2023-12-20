@@ -17,11 +17,14 @@ public class PromiseIntercept implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        log.info("preHandle: " + request.getRequestURI());
+        log.info("preHandle: {}", request.getRequestURI());
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        log.info("afterCompletion: " + request.getRequestURI());
+        log.info("afterCompletion: {}", request.getRequestURI());
+        if (ex != null) {
+            log.error(ex.getMessage(), ex);
+        }
     }
 }

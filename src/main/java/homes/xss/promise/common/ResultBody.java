@@ -2,20 +2,20 @@ package homes.xss.promise.common;
 
 public class ResultBody<T> {
 
-    private String code;
+    private Integer code;
     private String msg;
     private T body;
 
     public static <T> ResultBody<T> ok() {
         ResultBody<T> resultBody = new ResultBody<>();
-        resultBody.setCode("000000");
+        resultBody.setCode(20000);
         resultBody.setMsg("ok");
         return resultBody;
     }
 
     public static <T> ResultBody<T> ok(T body) {
         ResultBody<T> resultBody = new ResultBody<>();
-        resultBody.setCode("000000");
+        resultBody.setCode(20000);
         resultBody.setMsg("ok");
         resultBody.setBody(body);
         return resultBody;
@@ -23,23 +23,23 @@ public class ResultBody<T> {
 
     public static <T> ResultBody<T> failed() {
         ResultBody<T> resultBody = new ResultBody<>();
-        resultBody.setCode("000500");
+        resultBody.setCode(50000);
         resultBody.setMsg("failed");
         return resultBody;
     }
 
     public static <T> ResultBody<T> failed(String msg) {
         ResultBody<T> resultBody = new ResultBody<>();
-        resultBody.setCode("000500");
+        resultBody.setCode(50000);
         resultBody.setMsg(msg);
         return resultBody;
     }
 
-    public String getCode() {
+    public Integer getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(Integer code) {
         this.code = code;
     }
 

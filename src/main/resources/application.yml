@@ -6,6 +6,6 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://www.xss.homes:3306/promise?useSSL=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://124.222.126.25:3306/promise?useSSL=true&useUnicode=true&characterEncoding=UTF-8
     username: root
     password: kandaiming
