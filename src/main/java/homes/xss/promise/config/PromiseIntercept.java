@@ -1,4 +1,4 @@
-package homes.xss.promise.intercept;
+package homes.xss.promise.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -17,12 +17,12 @@ public class PromiseIntercept implements HandlerInterceptor {
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        log.info("preHandle: {}", request.getRequestURI());
+        log.info("preHandle: {}, method: {}", request.getRequestURI(), request.getMethod());
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        log.info("afterCompletion: {}", request.getRequestURI());
+        log.info("afterCompletion: {}, method: {}", request.getRequestURI(), request.getMethod());
         if (ex != null) {
             log.error(ex.getMessage(), ex);
         }

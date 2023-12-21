@@ -22,7 +22,7 @@ public class PromiseReserveController {
     }
 
     @PostMapping
-    public ResultBody<Object> save(@RequestBody PromiseReserve vo) {
+    public ResultBody<Object> save(PromiseReserve vo) {
         promiseReserveService.save(vo);
         return ResultBody.ok();
     }
@@ -34,7 +34,7 @@ public class PromiseReserveController {
     }
 
     @DeleteMapping
-    public ResultBody<Object> delete(@RequestBody PromiseReserve vo) {
+    public ResultBody<Object> delete(PromiseReserve vo) {
         promiseReserveService.removeById(vo.getId());
         return ResultBody.ok();
     }
